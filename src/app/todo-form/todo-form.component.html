@@ -1,0 +1,13 @@
+<div class="container">
+  <form action="" class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form__inputs">
+      <span>Write task name:</span>
+      <input type="text" class="form__inputs__title" placeholder="Name" formControlName="title">
+      <span>Write task description:</span>
+      <input type="text" class="form__inputs__description" placeholder="Description" formControlName="description">
+    </div>
+    <div class="form__button">
+      <button type="submit" [disabled]="form.invalid">Add</button>
+    </div>
+  </form>
+</div>

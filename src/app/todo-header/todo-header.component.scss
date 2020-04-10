@@ -1,0 +1,103 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid black;
+  padding-right: 10px;
+
+  &__title {
+    font-size: 3rem;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    & span {
+      color: white;
+    }
+
+    & p {
+      font-size: 3rem;
+      color: white;
+    }
+
+    .back {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+
+      &-left {
+        width: 50%;
+        height: 100%;
+        background-color: black;
+        animation: 1s linear 0s normal none 1 running leftTransform;
+      }
+    }
+  }
+
+  &__menu {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+
+    &__nav {
+      width: 50%;
+      display: flex;
+      align-content: center;
+
+      & ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        & li {
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          font-size: 3rem;
+
+          &:hover {
+            cursor: pointer;
+            color: darkgrey;
+          }
+        }
+      }
+    }
+
+    &__auth {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      & button {
+        width: 100px;
+        border: none;
+        border: 3px solid black;
+        color: white;
+        background-color: darkgrey;
+        padding: 5px;
+        font-family: consolas;
+      }
+    }
+  }
+
+}
+
+// ------ KEYFRAMES ------
+
+@keyframes leftTransform {
+  0% {
+    width: 0;
+  }
+
+  10% {
+    width: 0;
+  }
+
+  100% {
+    width: 50%;
+  }
+}

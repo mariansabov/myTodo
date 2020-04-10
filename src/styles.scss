@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: consolas;
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0  auto;
+}

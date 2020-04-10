@@ -1,0 +1,19 @@
+.form {
+  border: 3px solid black;
+  padding: 10px;
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-bottom: 5px;
+      padding: 0 5px;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}

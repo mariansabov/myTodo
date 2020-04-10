@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="wrap">
+    <p>Tasks</p>
+  </div>
+  <table *ngIf="tasksList.length; else noTasks">
+    <tr>
+      <td>Номер</td>
+      <td>Название</td>
+      <td>Дата створення</td>
+      <td>Дата редагування</td>
+      <td>Редагувати</td>
+      <td>Видалити</td>
+    </tr>
+    <tr *ngFor="let task of tasksList; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.createdAt}}</td>
+        <td>{{task.editedAt}}</td>
+        <td><button (click)="switchEdit(task)">Edit</button></td>
+        <td><button (click)="remove(task)">Remove</button></td>
+    </tr>
+    <div class="editForm" [hidden]="!edit">
+      <form action="" class="editForm_Form" [formGroup]="form">
+        <div class="editForm_Container">
+          <div class="editForm_Input">
+            <p>Title:{{taskForEdit.title}}</p>
+            <input type="text" formControlName="title" [value]="taskForEdit.title">
+          </div>
+          <div class="editForm_Input">
+            <p>Description:{{taskForEdit.description}}</p>
+            <input type="text" formControlName="description" [value]="taskForEdit.description">
+          </div>
+          <div>
+            <button class="edit" [disabled]="form.invalid" (click)="editTask(taskForEdit)">Edit it</button>
+            <button (click)="switchEdit2()">Back</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </table>
+
+  <ng-template #noTasks>Empty</ng-template>
+</div>
